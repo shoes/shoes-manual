@@ -149,7 +149,7 @@ class Manual < Shoes
     txt = txt.gsub("\n", ' ').gsub(/\^(.+?)\^/m, '\1').gsub(/\[\[BR\]\]/i, "\n")
     txts = txt.split(/(\[\[\S+?\]\])/m).map { |s| s.split(/(\[\[\S+? .+?\]\])/m) }.flatten
     case txts[0]
-    when /\A==== (.+) ====/ then caption(*marker(Regexp.last_match[1], term), size: 24)
+    when /\A==== (.+) ====/ then caption(*marker(Regexp.last_match[1], term), size: 24); para NL
     when /\A=== (.+) ===/ then tagline(*marker(Regexp.last_match[1], term), size: 12, weight: 'bold')
     when /\A== (.+) ==/ then subtitle(*marker(Regexp.last_match[1], term))
     when /\A= (.+) =/ then title(*marker(Regexp.last_match[1], term))

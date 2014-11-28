@@ -15,7 +15,12 @@ class Shoes
   module Manual
     ROOT_DIR = File.expand_path(File.join(__FILE__, "../../.."))
 
-    def self.load(lang)
+    def self.run(lang = 'English')
+      $lang = lang
+      load 'shoes/manual/app.rb'
+    end
+
+    def self.load_docs(lang)
       @docs ||= load_path(lang =~ /\.txt$/ ? lang : File.join(ROOT_DIR, "static/manual-#{lang}.txt"))
     end
 

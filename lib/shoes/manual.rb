@@ -18,6 +18,9 @@ class Shoes
     def self.run(lang = 'English')
       $lang = lang
       load 'shoes/manual/app.rb'
+    rescue LoadError
+      puts "Wasn't able to load Shoes to run the manual. Does your app have Shoes required?"
+      raise
     end
 
     def self.load_docs(lang)

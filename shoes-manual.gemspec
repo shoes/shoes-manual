@@ -18,6 +18,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "shoes-highlighter", "~> 1.0", ">= 1.0.0"
+  spec.add_dependency "nokogiri", "~> 1.6.4.1", ">=1.6.4.1" # For converting the manual to HTML
+
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake",    "~> 10.0"
   spec.add_development_dependency "pry",     "~> 0.10.0"

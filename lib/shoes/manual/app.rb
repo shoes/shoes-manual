@@ -243,7 +243,7 @@ class Manual < Shoes
   end
 
   def html_manual
-    dir = ask_save_folder
+    dir = @app.ask_save_folder
     return unless dir
     FileUtils.mkdir_p File.join(dir, 'static')
     FileUtils.mkdir_p File.join(dir, 'snapshots')
@@ -264,7 +264,7 @@ class Manual < Shoes
   def mk_html(title, desc, methods, next_file, next_title, menu)
     man = self
     html = Nokogiri::HTML::Builder.new do |h|
-      h.html(lang: Manual::LANG) do
+      h.html(lang: LANG) do
         h.head do
           h.meta charset: 'utf-8'
           h.title "The Shoes 4 Manual // #{title}"

@@ -950,6 +950,14 @@ In this case, you can still get the headers for the downloaded file, but
 `response.body` will be `nil`, since the data wasn't saved to memory.  You will
 need to open the file to get the downloaded goods.
 
+=== fullscreen = a boolean ===
+
+Sets whether the current app takes up the entire screen or not.
+
+=== fullscreen?() » a boolean ===
+
+Gets a boolean indicating whether current app is shown fullscreen.
+
 === location() » a string ===
 
 Gets a string containing the URL of the current app.
